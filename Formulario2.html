@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulario2</title>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  <style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: darkcyan;
+      }
+
+      input {
+        float: left;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        clear: both;
+        float: left;
+        width: 300px;
+    }
+
+    button {
+        clear: both;
+        float: left;
+        width: 100px;
+    }
+
+    .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: rgb(255, 166, 0);
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    
+    #caja{
+        margin-top:100px;
+        margin-left:100px ;
+        
+    }
+
+
+  </style>
+  <script>
+      $(function() 
+      {
+        $("#mi-formulario").validate({
+             rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    fono: "required",                   
+                    nombres:"required",
+                    apellidos:"required",
+                    codigo:"required",
+                    direccion:"required",
+                    numero:"required",
+                    razon:"requiered",
+                    }, 
+            messages: {
+                email: {
+                    required: 'Ingresa tu correo electrónico',
+                    email: 'Formato de correo no válido'
+                },
+                nombres: {
+                    required: 'Ingrese sus nombres',
+                    minlength: 'Caracteres insuficientes'
+                },
+                fono:{
+                    required: 'Ingrese un número de celular',
+                    minlength: 'Cantidad de digitos insuficiente'
+                },
+                apellidos:{
+                    required: 'Ingrese sus apellidos',
+                    minlength: 'Caracteres insuficientes'
+                },
+                codigo: {
+                    required: 'Ingrese su código postal',
+                    minlength: 'Código inválido'
+
+                },
+                direccion: {
+                    required: 'Ingrese su direccion',
+                    minlength: 'Cantidad de caracteres insuficientes'
+                  
+
+                },
+                numero: {
+                    required: 'Ingrese el numero de su dirección',
+                    minlength: 'Cantidad de numeros insuficientes'
+                  
+
+                },
+                razon: {
+                    required: 'Ingrese su razon para participar',
+                    minlength: 'minímo 10 palabras'
+                  
+
+                }
+            }
+        }); 
+    }); 
+  </script>
+   
+</head>
+
+<body>
+    <h1>CONCURSO ARTETODO</h1>
+    <hr>
+    <h3>Ingrese sus datos para participar en el concurso</h3>
+    
+    <div id="caja" >
+    <form id="mi-formulario" action="index.html">
+        <label>Nombres: </label>
+        <input type="text" name="nombres" minlength="5" required>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" minlength="5" required>
+
+        <label>Correo Electrónico: </label>
+        <input type="text" name="email" required placeholder="xxxxxx@dominio.com">
+      
+        <label>Celular: </label>
+        <input type="text" name="fono" minlength="9" required>
+
+        <label>Código: </label>
+        <input type="text" name="codigo" minlength="7" required>
+           
+        <label>Dirección: </label>
+        <input type="text" name="direccion" minlength="6" required>
+
+        <label>Numero: </label>
+        <input type="text" name="numero" minlength="4" required>
+
+        <label>Razon: </label>
+        <input type="text" name="razon" minlength="10" required>
+        
+        <br>
+        <button>Enviar</button>
+        
+
+      </form>
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+    <p><a href="index.html" >Volver al Inicio</a></p>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulario1</title>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  <style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: darkcyan;
+      }
+
+    input {
+        float: left;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        clear: both;
+        float: left;
+        width: 300px;
+    }
+
+    button {
+        clear: both;
+        float: left;
+        width: 100px;
+    }
+
+    .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: rgb(255, 166, 0);
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    
+    #caja{
+        margin-top:100px;
+        margin-left:100px ;
+        
+    }
+
+
+  </style>
+  <script>
+      $(function() 
+      {
+        $("#mi-formulario").validate({
+             rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    fono: "required",                   
+                    nombres:"required",
+                    apellidos:"required",
+                    DetalleBreve:"required",
+                    explicacion:"required",
+                    }, 
+            messages: {
+                email: {
+                    required: 'Ingresa tu correo electrónico',
+                    email: 'Formato de correo no válido'
+                },
+                nombres: {
+                    required: 'Ingrese sus nombres',
+                    minlength: 'Caracteres insuficientes'
+                },
+                fono:{
+                    required: 'Ingrese un número de celular',
+                    minlength: 'Cantidad de digitos insuficiente'
+                },
+                apellidos:{
+                    required: 'Ingrese sus apellidos',
+                    minlength: 'Caracteres insuficientes'
+                },
+                DetalleBreve: {
+                    required: 'Ingrese detalles del problema brevemente',
+                    minlength: 'De más detalles de su problema'
+
+                },
+                explicacion: {
+                    required: 'Ingrese su problema',
+                    minlength: 'De más detalles de su problema'
+
+                }
+            }
+        }); 
+    }); 
+  </script>
+   
+</head>
+
+<body>
+    <h1>Ticket Soporte</h1>
+    <hr>
+    <h3>Porfavor ingrese los datos pedidos a continuación</h3>
+    
+    <div id="caja" >
+    <form id="mi-formulario" action="index.html">
+        <label>Nombres: </label>
+        <input type="text" name="nombres" minlength="5" required>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" minlength="5" required>
+
+        <label>Correo Electrónico: </label>
+        <input type="text" name="email" required placeholder="xxxxxxx@dominio.com">
+      
+        <label>Celular: </label>
+        <input type="text" name="fono" minlength="9" required>
+
+        <label>Problema: </label>
+        <input type="text" name="explicacion" minlength="6" required>
+           
+        <label>Detalle Breve: </label>
+        <input type="text" name="DetalleBreve" minlength="6" required>
+        
+        <br>
+        <button>Enviar</button>
+      </form>
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+    <p><a href="index.html" >Volver al Inicio</a></p>
+</body>
+</html>
